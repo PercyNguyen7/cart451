@@ -137,14 +137,14 @@ p{
 }
 
 .content-area{
-    margin: auto;
-    margin-top:0;
+    margin:0 auto;
+    /* margin-top:0; */
     width:100%;
-    min-height: 100vh;
+    /* min-height: auto; */
     background-color: rgba(210,174,113,50%);
     /* backdrop-filter: blur(0.1rem); */
 
-    padding: clamp(8rem,10vw,12rem) 1rem 0 1rem;
+    padding: clamp(6rem,10vw,10rem) 1rem clamp(6rem,10vw,10rem) 1rem;
     border: 1rem solid #65435c;
     outline:5px solid #ad68b9;
     
