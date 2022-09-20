@@ -19,7 +19,7 @@ body,html{
 
 :root {
     /* colors */
-    --clr-yellow: 40, 98%, 78%;
+    --clr-yellow: 40, 98%, 75%;
     --clr-light: 231 77% 90%;
     --clr-blue: 208, 87%, 64%;
     --clr-white: 0 0% 100%;
@@ -67,8 +67,7 @@ body,html{
 
 /* Reset margins */
 body,h1,h2,h3,h4,h5,p,figure, picture {
-    margin: 0; 
-}
+    margin: 0; }
 h1,h2,h3,h4,h5,h6 {
     font-weight: 200;
 }
@@ -78,9 +77,9 @@ body{
     background-size: clamp(20rem,30vw,40rem);
 }
 
-p{
-    margin-top:clamp(0.5rem,20vw,1rem);
+p{ margin-top:clamp(0.5rem,20vw,1rem);
 }
+
 @media (min-width: 35em) {
     :root{
         --fs-800: 3.5rem;
@@ -93,7 +92,6 @@ p{
             width:85% !important;
     }  
 }
-
 @media (min-width: 45em) {
     :root {
         /* font-sizes */
@@ -107,10 +105,8 @@ p{
         width:75% !important;
    }
 }
-
 @media (min-width: 55em) {
     :root {
-        
         --fs-800: 6.25rem;
         --fs-700: 3.6rem;
         --fs-600: 3.25rem;
@@ -125,10 +121,16 @@ p{
 section{
     outline: 3px solid white;
     padding: clamp(2rem,10vw,6rem) clamp(1rem,5vw,3rem);
-    margin-bottom: clamp(2rem, 5vw,4rem);
+    margin-bottom: clamp(4rem, 5vw,6rem);
     background-color: rgba(123,209,193,90%);
     box-shadow: 0px 0px 20px white;
 }
+section:nth-child(odd){
+    background-color: rgba(209, 123, 180, 0.9);
+
+}
+
+
 section>h2{
     text-align: center;
 }
