@@ -17,6 +17,7 @@ body,html{
     scroll-behavior: smooth;
 }
 
+
 :root {
     /* colors */
     --clr-yellow: 40, 98%, 75%;
