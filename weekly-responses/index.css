@@ -136,8 +136,8 @@ section>h2{
     text-align: center;
 }
 
-section>*:last-child{
-    margin-top:5rem;
+section>p{
+    margin-top:3rem;
 }
 
 .content-area{
