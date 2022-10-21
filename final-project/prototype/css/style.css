@@ -2,6 +2,14 @@
     font-family: "Instagram";
     src: url(../assets/fonts/instagram.otf) format('opentype');
 }  
+@font-face {
+    font-family: "SFProRegular";
+    src: url(../assets/fonts/sfpro_regular.OTF) format('truetype');
+}  
+@font-face {
+    font-family: "SFProMedium";
+    src: url(../assets/fonts/sfpro_medium.OTF) format('truetype');
+}  
 
 html,
 body {
@@ -33,9 +41,155 @@ picture {
 
 :root{
     --ff-serif:"Instagram", serif;
+    --ff-sans-regular:"SFProRegular",sans-serif;
+    --ff-sans-medium:"SFProMedium",sans-serif;
+       /* font-sizes */
+       --fs-600: 1.5rem;
+       --fs-500: 1.5rem;
+       --fs-400: 1.25rem;
+       --fs-300: 1rem;
+       --fs-200: 0.875rem;
+       /* --fs-title: 1.5rem; */
 }
-.ff-serif { font-family: var(--ff-serif); } 
+.ff-serif { font-family: var(--ff-serif); }
+.ff-sans-regular { font-family: var(--ff-sans-regular); }  
+.ff-sans-medium { font-family: var(--ff-sans-medium); } 
+.fs-600{ font-size: var(--fs-600);}
 
+body{
+    background-color: rgb(251, 251, 251);
+}
+#nav-1{
+    background-color: white;
+    /* height:clamp(2rem,10vw,3rem); */
+    position: fixed;
+    width:100%;
+    top:0;
+    padding:0.5rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
 #logo{
- font-family: 'Instagram',serif;   
+    font-weight: 100;
+}
+
+/* .icons-wrapper{
+    background-color: aqua;
+
+} */
+.heart-icon{
+    background: url('../assets/icons/heart-icon.png') center center  ;
+}
+.messenger-icon{
+    background: url('../assets/icons/messenger-icon.png') center center  ;
+}
+
+.icons-wrapper>*:not(:first-child){
+    /* height:2rem; */
+    margin-left:1rem;
+}
+
+
+#nav-2{
+    position: fixed;
+    bottom:0;
+    background-color: white;
+    width:100%;
+    padding:0.5rem 1.5rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgb(211, 211, 211);
+}
+
+.home-icon{
+    background: url('../assets/icons/home-icon.png') center center;
+}
+.about-icon{
+    background: url('../assets/icons/search-icon.png') center center;
+}
+.post-icon{
+    background: url('../assets/icons/post-icon.png') center center;
+}
+.result-icon{
+    background: url('../assets/icons/explore-icon.png') center center;
+}
+.account-icon{
+    background: url('../assets/icons/account-icon.png') center center;
+}
+.follow-icon,
+.like-icon{
+    background: url('../assets/icons/like-icon.png') center center;
+}
+.comment-icon{
+    background: url('../assets/icons/comment-icon.png') center center;
+}
+.share-icon{
+    background: url('../assets/icons/share-icon.png') center center;
+}
+.save-icon{
+    background: url('../assets/icons/save-icon.png') center center;
+}
+
+
+.left-post-icons>*,
+.save-icon,
+#nav-2>*,
+.icons-wrapper>*{
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-size:1.5rem;
+    /* background-color: blue; */
+}
+
+.posts{
+    width:100%;
+    background-color: white;
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgb(211, 211, 211);
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+.posts>*:not(:first-child){
+    /* height:2rem; */
+    margin-top:0.5rem;
+}
+
+.profile-post-wrapper{
+    gap:0.5rem;
+    margin-bottom:1rem;
+    align-items: center;
+}
+
+.profile-img-circle{
+    width:1.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.post-interact-icons{
+    align-items: center;
+    justify-content: space-between;
+}
+.left-post-icons{
+    gap:1rem;
+}
+
+.video{
+    width: calc(100% + 3rem); 
+    aspect-ratio: 1;
+    margin-left: -1.5rem;    
+    background-color: black;
+}
+
+/*              Utility Class */
+/*              Utility Class */
+.flex{
+    display:flex;
+}
+
+.blank{
+    height:3rem;
 }
