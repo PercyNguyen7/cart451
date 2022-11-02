@@ -184,6 +184,17 @@ body{
     background-color: black;
 }
 
+
+.embed-tweet{
+    width:100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+/* .embed-tweet>*{
+    width: 80rem !important;
+} */
+
 /*              Utility Class */
 /*              Utility Class */
 .flex{
