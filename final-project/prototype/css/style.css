@@ -146,9 +146,9 @@ body{
 .save-icon,
 .icons-nav-2,
 .icons-wrapper>*{
-    width: 1.8rem;
+    width: 1.7rem;
     aspect-ratio: 1;
-    background-size:1.8rem;
+    background-size:1.7rem;
     /* background-color: blue; */
 }
 
