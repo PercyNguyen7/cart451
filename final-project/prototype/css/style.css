@@ -100,7 +100,7 @@ table{
     background-color: rgb(235, 235, 235);;
   }
   th,td{ 
-    padding: 0.2rem 1rem;
+    padding: 0.2rem 0.2rem;
   }
 #nav-1,#nav-2{
     z-index: 1000;
@@ -127,9 +127,9 @@ table{
 .heart-icon{
     background: url('../assets/icons/heart-icon.png') center center no-repeat ;
 }
-.messenger-icon{
-    background: url('../assets/icons/messenger-icon.png') center center no-repeat ;
-}
+.messenger-icon{background: url('../assets/icons/messenger-icon.png') center center no-repeat ;}
+.messenger-icon-active{background: url('../assets/icons/messenger-icon-night.png') center center no-repeat ;}
+
 
 .home-icon{background: url('../assets/icons/home-icon.png') center center no-repeat;}
 .home-icon-active{background: url('../assets/icons/home-icon-night.png') center center no-repeat;}
@@ -138,19 +138,17 @@ table{
 .post-icon{background: url('../assets/icons/post-icon.png') center center no-repeat;}
 .post-icon-active{background: url('../assets/icons/post-icon-night.png') center center no-repeat;}
 .result-icon{background: url('../assets/icons/explore-icon.png') center center no-repeat;}
+.result-icon-active{background: url('../assets/icons/explore-icon-night.png') center center no-repeat;}
+
 .account-icon{background: url('../assets/icons/account-icon.png') center center no-repeat;}
 .follow-icon,
-.like-icon{
-    background: url('../assets/icons/like-icon.png') center center no-repeat;}
+.like-icon{background: url('../assets/icons/like-icon.png') center center no-repeat;}
 .follow-icon-active,
 .like-icon-active{
     background: url('../assets/icons/like-icon-night.png') center center no-repeat;}
-.comment-icon{
-    background: url('../assets/icons/comment-icon.png') center center no-repeat;}
-.share-icon{
-    background: url('../assets/icons/share-icon.png') center center no-repeat;}
-.save-icon{
-    background: url('../assets/icons/save-icon.png') center center no-repeat;}
+.comment-icon{background: url('../assets/icons/comment-icon.png') center center no-repeat;}
+.share-icon{background: url('../assets/icons/share-icon.png') center center no-repeat;}
+.save-icon{background: url('../assets/icons/save-icon.png') center center no-repeat;}
 
 .wrap-center{
     width: 60%;
