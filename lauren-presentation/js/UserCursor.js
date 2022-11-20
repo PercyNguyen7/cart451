@@ -66,7 +66,7 @@ class UserCursor {
       push();
       imageMode(CENTER);
       noStroke();
-      fill('rgba(255,255,255, 0.15)');
+      fill('rgba(255,255,255, 0.08)');
       ellipse(this.x, this.y, this.width, this.height);
       pop();
     }
