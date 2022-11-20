@@ -20,12 +20,17 @@ let mouseCursor;
 let laurenAlexaImg;
 let laurenSTImg;
 let laurenVoiceImg;
+let laurenVoiceP5Img;
+let laurenAlexa2Img;
+
+let laurenVoiceActivated = false;
 // Variables to store our two entities
 let user;
 let thankyou = true;
 
+let cursorVisible = true;
 let inputVisible = true;
-
+let laurenBragSFX;
 // Description of preload
 
 function preload() {
@@ -35,6 +40,11 @@ function preload() {
     laurenAlexaImg= loadImage('./assets/images/lauren-alexa.png');
     laurenSTImg = loadImage('./assets/images/lauren1.png');
     laurenVoiceImg = loadImage('./assets/images/lauren2a.png');
+    laurenVoiceP5Img = loadImage('./assets/images/lauren2b.png');
+    laurenAlexa2Img = loadImage('./assets/images/lauren3.png');
+
+    //sound
+    laurenBragSFX = loadSound('./assets/sounds/laurenBrag.mp3');
 }
 
 
@@ -43,7 +53,6 @@ function preload() {
 // Description of setup
 
 function setup() {
-
     createCanvas(1200, 675);
     background(0);
     if (annyang) {
@@ -54,7 +63,6 @@ function setup() {
         annyang.start();
       }
       cursor = new UserCursor( width / 2, height / 2, 0.1, 3);
-
 }
 
 
@@ -62,7 +70,6 @@ function setup() {
 //
 // Description of draw()
 function draw() {
-
     switch (state) {
         case `laurenMenu`:
             laurenMenu();
@@ -71,19 +78,18 @@ function draw() {
             lauren1();
             break;
         case `lauren2`:
-            startGame();
+            lauren2();
             break;
         case `lauren3`:
-            happyEnd();
+            lauren3();
             break;
-        case `kylemenu`:
-            sadEnd();
+        case `kyleBio`:
+            kyleBio();
             break;
     }
     displayCursor();
-  
-}
-function laurenMenu(){
+  }
+  function laurenMenu(){
     background(208,208,208);
     // drawingContext.shadowOffsetX = 2;
     // drawingContext.shadowOffsetY = -2;
@@ -128,41 +134,72 @@ function laurenMenu(){
     background(20,20,20);
     push();
     imageMode(CENTER);
-    image(laurenSTImg ,3.2*width/5, 3.8*height/5, 700,230);
+    if(!laurenVoiceActivated){
+    image(laurenVoiceImg,width/2,height/2+35,900,400 );}
+    else if(laurenVoiceActivated){
+    image(laurenVoiceP5Img,width/2,height/2+35,900,400 );}
     pop();
-    displayTitle(`THE SOCIAL TURKERS`, 90, width / 6, 100, 201,60,20);
-    displayTitle(`Dates with strangers, helped by strangers `, 40 , width /7, 175, 201,60,20);
-    displayText(`16 dates, 1 month, 0.25$, Portland Oregon `, 40 , width /8, 250, 230,230,230);
-    displayText(`Turkers watches 5 mins then response`, 40 , width /9, 300, 230,230,230);
-    displayText('Exploring relationships - TRANSFORMATIONS and WHAT IFS', 40 , width /10, 350, 230,230,230);
+    
+    displayTitle(`what do you want me to say`, 60, width / 6, 100, 201,60,20);
+    displayText('JavaScript (p5.js), Web Audio API, Descript Voice API, HTML, CSS', 20 , width /10, 150, 230,230,230);
+    // 
+    displayText('vulnerability, ownership, and authenticity in a time of rapidly advancing virtual reality', 20 , 0.6*width /2, 590, 230,230,230);
     displayInput();
+  }
+  function lauren3(){
+    background(20,20,20);
+    push();
+    imageMode(CORNER);
+    image(laurenAlexa2Img,0,0,900,500 );
     pop();
+    
+    displayTitle(`LAUREN`, 80, width / 6, 100, 201,60,20);
+    displayText('Questioning AI, Privacy and Home', 30 , 100, 520, 230,230,230);
+    displayText('"...not to impose a point of view, but to give viewers a space to form their own"', 30 , 100, 570, 230,230,230);
+
+
+    displayInput();
+  }
+
+  function kyleBio(){
+    background(0,0,50);
   }
 
   function registerInput(input){
-
     currentAnswer = input.toLowerCase();
     console.log(currentAnswer);
-
-    if (currentAnswer == '1' && state =='laurenMenu'){
+    if (currentAnswer == 1 && state =='laurenMenu'){
             // States
         state = 'lauren1';
+    }
+    else if(currentAnswer =='website' && state =='lauren1'){
+      window.open("http://socialturkers.com/");
+    }
+    else if(currentAnswer =='next artist' && state =='laurenMenu'){
+      state = 'kyleBio'
     }
     else if (state =='lauren1'&& currentAnswer =='menu' ||state =='lauren2'&& currentAnswer =='menu' ||state =='lauren3' && currentAnswer =='menu'){
       state ='laurenMenu';
     }
-
-    else if(currentAnswer =='website' && state =='lauren1'){
-      window.open("http://socialturkers.com/");
+    else if (currentAnswer ==2 && state =='laurenMenu'){
+      state = 'lauren2';
     }
-    else if (currentAnswer ==2 && state =='lauren'){
-
+    else if (currentAnswer =='hi lauren' && state =='lauren2'){
+      state = 'lauren2';
+      laurenVoiceActivated = true;
+      laurenBragSFX.play();
     }
-    else if (currentAnswer == 'thank you' && thankyou ==true){
-      thankyou = false;
-      alert("You're welcome...")
+    else if (currentAnswer ==3 && state =='laurenMenu'){
+      state = 'lauren3';
     }
+  
+   
+    // else if (currentAnswer == 'thank you' && thankyou ==true){
+    //   thankyou = false;
+    //   alert("You're welcome...")
+    // }
   }
+
 
   function displayInput(){
     if (inputVisible == true){
@@ -172,7 +209,6 @@ function laurenMenu(){
 
     // }
   }
-
   function displayTitle(string, size, x, y, r, g, b) {
     push();
     noStroke();
@@ -201,10 +237,13 @@ function displayCursor(){
     imageMode(CENTER);
     image(mouseCursor, mouseX, mouseY, 90, 90);
     pop();
+    if(cursorVisible){
     cursor.display();
     cursor.move();
     cursor.chase();
+  }
 }
+
 function displayBBRotated(){
     push();
     strokeWeight(40);
@@ -230,15 +269,32 @@ function keyPressed(){
   else if (keyCode === 50 && state == 'laurenMenu'){
     state = 'lauren2';
   }
+  else if (keyCode === 51 && state == 'laurenMenu'){
+    state = 'lauren3';
+  }
   else if (keyCode == BACKSPACE && state == 'lauren1'|| keyCode == BACKSPACE && state == 'lauren2'||keyCode == BACKSPACE && state == 'lauren3'){
     state = 'laurenMenu';
   }
 
-  // 32 IS FOR SPACEBAR!!
-  if (keyCode == 32 && inputVisible == true){
+  // < and > 
+  else if (keyCode == 188 && state =='kyleBio'){
+    state = 'laurenMenu';
+  } else if (keyCode == 190 && state =='laurenMenu'){
+    state = 'kyleBio';
+  }
+
+  // X (88) to close input!!
+  if (keyCode == 88 && inputVisible == true){
     inputVisible = false;
   }
-  else if (keyCode == 32 && inputVisible == false){
+  else if (keyCode == 88 && inputVisible == false){
     inputVisible = true;
+  }
+    // C(67) to close cursor!!
+  if (keyCode == 67 && cursorVisible == false){
+    cursorVisible = true;
+  }
+  else if (keyCode == 67 && cursorVisible == true){
+    cursorVisible = false;
   }
 }
