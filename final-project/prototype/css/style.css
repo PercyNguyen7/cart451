@@ -101,7 +101,7 @@ table{
     text-align: left;
 }
 th{
-    text-align: center;
+    /* text-align: center; */
 }
  td {
     /* border: 1px solid; */
