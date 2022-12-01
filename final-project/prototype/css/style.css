@@ -173,7 +173,9 @@ th{
     background-size:1.7rem;
     /* background-color: blue; */
 }
-
+.buttons{
+    cursor: pointer;
+}
 .posts{
     width:100%;
     background-color: white;
@@ -186,6 +188,17 @@ th{
 .posts>*:not(:first-child){
     /* height:2rem; */
     margin-top:0.5rem;
+}
+
+.posts-trial-1[data-visible="true"],
+.posts-trial-2[data-visible="true"],
+.posts-trial-3[data-visible="true"]{
+    display:block;
+}
+.posts-trial-1[data-visible="false"],
+.posts-trial-2[data-visible="false"],
+.posts-trial-3[data-visible="false"]{
+    display:none;
 }
 
 .profile-post-wrapper{
