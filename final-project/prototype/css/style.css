@@ -60,7 +60,7 @@ h3,
 h4,
 h5{
     font-weight: 400;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 h2:not(:first-child){
     margin-top:2rem !important;
@@ -78,6 +78,7 @@ h2:not(:first-child){
        --fs-200: 0.8rem;
        /* --fs-title: 1.5rem; */
 }
+
 .ff-serif { font-family: 'Instagram'; }
 .ff-sans-serif { font-family: 'Segoe UI'; }
 .ff-sans-regular { font-family: var(--ff-sans-regular); }  
@@ -193,9 +194,17 @@ th{
     border-bottom: 1px solid rgb(211, 211, 211); */
     border: 1px solid rgb(211, 211, 211);
 }
-.posts>*:not(:first-child){
-    /* height:2rem; */
+/* .posts>*:not(:first-child){
+
     margin-top:0.5rem;
+} */
+.posts>table,
+.posts>p,
+.posts>span{
+    margin-top:0.5rem;
+}
+.posts>h3{
+    margin-top:2rem;
 }
 
 .posts-trial-1[data-visible="true"],
