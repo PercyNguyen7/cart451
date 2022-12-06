@@ -391,6 +391,7 @@ a{
 /*              Utility Class */
 /*              Utility Class */
 .flex{display:flex;}
+.text-center{text-align: center;}
 .no-display{display:none;}
 .blank{height:3rem;
 }
