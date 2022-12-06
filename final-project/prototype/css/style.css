@@ -194,13 +194,24 @@ th{
     border-bottom: 1px solid rgb(211, 211, 211); */
     border: 1px solid rgb(211, 211, 211);
 }
+.line{
+    border-bottom: 1px solid black;
+    margin:1rem 0 1rem 0 !important;
+    width: 100%;
+}
+.line-2{
+    border-bottom: 1px solid black;
+    margin:3rem 0 1rem 0 !important;
+    width: 100%;
+}
 /* .posts>*:not(:first-child){
 
     margin-top:0.5rem;
 } */
 .posts>table,
 .posts>p,
-.posts>span{
+.posts>span,
+.posts>div{
     margin-top:0.5rem;
 }
 .posts>h3{
@@ -278,7 +289,9 @@ a{
 .day-button:hover .sub-menu{
     display: flex;
 }
-
+.instagram-media{
+    max-height: 50rem;
+}
 .embed-tweet{
     width:100%;
      display: flex;
