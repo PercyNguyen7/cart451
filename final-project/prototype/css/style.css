@@ -55,10 +55,7 @@ picture {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5{
+h2{
     font-weight: 400;
     margin-top: 2rem;
 }
@@ -215,7 +212,8 @@ th{
     margin-top:0.5rem;
 }
 .posts>h3{
-    margin-top:2rem;
+    font-weight: 400;
+    margin-top:1rem;
 }
 
 .posts-trial-1[data-visible="true"],
