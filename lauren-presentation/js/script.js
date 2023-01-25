@@ -302,7 +302,7 @@ function questions(){
 function registerInput(input) {
   currentAnswer = input.toLowerCase();
   console.log(currentAnswer);
-  if (currentAnswer == 1 && state == 'laurenMenu') {
+  if (currentAnswer == 'one' && state == 'laurenMenu') {
     // States
     state = 'lauren1';
   } else if (currentAnswer == 'website' && state == 'lauren1') {
@@ -311,17 +311,17 @@ function registerInput(input) {
     state = 'kyleMenu'
   } else if (state == 'lauren1' && currentAnswer == 'back' || state == 'lauren2' && currentAnswer == 'back' || state == 'lauren3' && currentAnswer == 'back') {
     state = 'laurenMenu';
-  } else if (currentAnswer == 2 && state == 'laurenMenu') {
+  } else if (currentAnswer == 'two' && state == 'laurenMenu') {
     state = 'lauren2';
   } else if (currentAnswer == 'hi lauren' && state == 'lauren2') {
     state = 'lauren2';
     laurenVoiceActivated = true;
     laurenBragSFX.play();
-  } else if (currentAnswer == 3 && state == 'laurenMenu') {
+  } else if (currentAnswer == 'three' && state == 'laurenMenu') {
     state = 'lauren3';
-  } else if (state == 'kyleMenu' && currentAnswer == 1) {
+  } else if (state == 'kyleMenu' && currentAnswer == 'one') {
     state = 'kyle1';
-  }else if (state == 'kyleMenu' && currentAnswer == 2) {
+  }else if (state == 'kyleMenu' && currentAnswer == 'two') {
     state = 'kyle2';
   }else if (state == 'kyle1' && currentAnswer == 'back' || state == 'kyle2' && currentAnswer == 'back' ) {
     state = 'kyleMenu';
